@@ -10,7 +10,7 @@ function App() {
     "https://via.placeholder.com/1200x630?text=Set Title and subTitle"
   );
 
-  const [values, setValues] = useState({ title: '', subtitle: '' })
+  const [values, setValues] = useState({ title: '', subtitle: '', titleFontSize: 30, taglineFontSize: 24 })
 
 
   const handleInputChange = e => {
@@ -31,10 +31,10 @@ function App() {
       textColor: '232129',
       textLeftOffset: 150,
       textAreaWidth: 1200,
-      titleBottomOffset: 750,
-      taglineTopOffset: 240,
-      titleFontSize: 30,
-      taglineFontSize: 24,
+      titleBottomOffset: 700,
+      taglineTopOffset: 290,
+      titleFontSize: values.titleFontSize,
+      taglineFontSize: values.taglineFontSize,
       imageHeight: 950
     });
     setSrc(socialImage);
@@ -44,7 +44,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="wrapper">
 
 
 
@@ -72,6 +72,28 @@ function App() {
             name="subtitle"
             onChange={handleInputChange}
             className="form-control"
+
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="number"
+            placeholder="Title fontSize"
+            name="titleFontSize"
+            onChange={handleInputChange}
+            className="form-control"
+            value={values.titleFontSize}
+
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="number"
+            placeholder="Title fontSize"
+            name="taglineFontSize"
+            onChange={handleInputChange}
+            className="form-control"
+            value={values.taglineFontSize}
 
           />
         </div>
